@@ -97,3 +97,24 @@ select {
 body {
 	font-family: "League Spartan", sans-serif;
 }
+
+/* Utilities */
+
+.button {
+	position: relative;
+
+	min-width: fit-content;
+	padding-inline: 0.75rem;
+	height: 2rem;
+	border-radius: 0.25rem;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+
+	border: none;
+
+	font-size: var(--font-size-400);
+	font-weight: var(--font-weight-bold);
+}
