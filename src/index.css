@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
 /* Box sizing rules, remove default paddings and margins */
 *,
 *::before,
@@ -71,4 +73,27 @@ select {
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+}
+
+/* General styling */
+
+:root {
+	--color-primary-400: hsl(180, 29%, 50%);
+
+	--color-neutral-100: hsl(180, 52%, 96%);
+	--color-neutral-200: hsl(180, 31%, 95%);
+	--color-neutral-400: hsl(180, 8%, 52%);
+	--color-neutral-900: hsl(180, 14%, 20%);
+
+	--font-size-normal: 500;
+	--font-size-bold: 700;
+
+	--font-size-100: 0.81rem;
+	--font-size-200: 0.875rem;
+	--font-size-400: 0.94rem;
+	--font-size-600: 1.19rem;
+}
+
+body {
+	font-family: "League Spartan", sans-serif;
 }
