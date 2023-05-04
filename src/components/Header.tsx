@@ -5,6 +5,8 @@ export const Header = () => {
 		<header className="header">
 			<ul className="header__tag-list">
 				<li className="header__tag">Frontend</li>
+				<li className="header__tag">Frontend</li>
+				<li className="header__tag">Frontend</li>
 			</ul>
 
 			<button className="button">Clear</button>
