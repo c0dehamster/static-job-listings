@@ -1,5 +1,7 @@
 import Logo from "../assets/images/photosnap.svg"
 
+import "./JobCard.css"
+
 export const JobCard = () => {
 	return (
 		<li className="card">
