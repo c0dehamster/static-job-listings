@@ -1,7 +1,10 @@
+import Logo from "../assets/images/photosnap.svg"
+
 export const JobCard = () => {
 	return (
 		<li className="card">
 			<div className="card__info">
+				<img src={Logo} alt="" className="card__logo" />
 				<div className="card__header">
 					<p className="card__company">Photoshop</p>
 				</div>
