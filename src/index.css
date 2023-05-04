@@ -102,9 +102,7 @@ ul {
 	list-style: none;
 }
 
-/* Utilities */
-
-.button {
+button {
 	position: relative;
 
 	min-width: fit-content;
