@@ -52,3 +52,9 @@
 	left: 0;
 	right: 0;
 }
+
+@media screen and (min-width: 50rem) {
+	.header {
+		width: max(47rem, 77%);
+	}
+}

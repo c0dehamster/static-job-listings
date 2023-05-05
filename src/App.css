@@ -36,7 +36,18 @@
 	gap: 2.5rem;
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 50rem) {
+	.app {
+		padding-inline: 0px;
+	}
+
+	/* Magic numbers provide seamless transition between
+	width values for small and large screen sizes */
+
+	.main {
+		width: max(47rem, 77%);
+	}
+
 	.app::before {
 		background-image: url(./assets/images/bg-header-desktop.svg);
 	}
