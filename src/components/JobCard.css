@@ -2,7 +2,8 @@
 	position: relative;
 
 	min-height: 9.5rem;
-	padding: 1.5rem;
+	padding-inline: 2.5rem;
+	padding-block: 2rem;
 	border-radius: 0.25rem;
 	align-items: center;
 
@@ -10,7 +11,9 @@
 	grid-template-areas:
 		"info"
 		"tags";
-	gap: 1rem;
+	align-items: center;
+	row-gap: 1rem;
+	column-gap: 1.5rem;
 
 	background-color: white;
 	box-shadow: 0 0.5rem 2rem 0 hsl(180 8% 52% / 0.5);
@@ -29,46 +32,48 @@
 }
 
 .card__logo {
+	grid-area: logo;
+
 	position: absolute;
-	top: 0;
 	left: 1.5rem;
+	top: 0;
 	transform: translateY(-50%);
 
-	width: 3rem;
 	aspect-ratio: 1;
+	width: 3rem;
 }
 
 .card__info {
-	padding-block: 2rem 1rem;
+	grid-area: info;
+
+	padding-block-end: 1rem;
+
 	display: grid;
 	gap: 0.5rem;
 	border-bottom: 1px solid var(--color-neutral-400);
 }
 
-.card__company,
-.card__heading,
-.card__detail {
-	font-size: var(--font-size-100);
-}
-
-.card__header,
-.card__categories {
+.card__header {
 	display: flex;
 	align-items: center;
-}
-
-.card__header {
 	gap: 1.5rem;
 }
 
-.card__categories {
+.card__company {
+	font-size: var(--font-size-100);
+	color: var(--color-primary-400);
+	font-weight: var(--font-weight-bold);
+}
+
+.card__cathegories {
+	display: flex;
 	gap: 0.5rem;
 }
 
-.card__category {
+.card__cathegory {
 	height: 1.5rem;
-	border-radius: 0.75rem;
 	padding-inline: 0.5rem;
+	border-radius: 0.75rem;
 
 	display: inline-flex;
 	align-items: center;
@@ -76,26 +81,24 @@
 	color: var(--color-neutral-100);
 
 	font-size: var(--font-size-100);
-	text-transform: uppercase;
 	font-weight: var(--font-weight-bold);
+	text-transform: uppercase;
 }
 
-.card__category--new {
+.card__cathegory--new {
 	background-color: var(--color-primary-400);
 }
 
-.card__category--featured {
+.card__cathegory--featured {
 	background-color: var(--color-neutral-900);
 }
 
-.card__company {
-	color: var(--color-primary-400);
-	font-weight: var(--font-weight-bold);
-}
-
 .card__heading {
-	color: var(--color-neutral-900);
+	font-size: var(--color-neutral-100);
 	font-weight: var(--font-weight-bold);
+	color: var(--color-neutral-900);
+
+	transition: color 100ms ease-in;
 }
 
 .card__details {
@@ -105,18 +108,20 @@
 
 .card__detail {
 	position: relative;
-	color: var(--color-neutral-400);
+
+	font-size: var(--font-size-100);
 	font-weight: var(--font-weight-normal);
+	color: var(--color-neutral-400);
 }
 
 .card__detail:not(:last-child)::before {
 	content: "";
 	position: absolute;
-	right: -0.75rem;
 	top: 40%;
-	transform: translateX(50%) translateY(-50%);
+	right: -0.75rem;
+	transform: translateX(50%);
 
-	width: 0.2rem;
+	width: 0.125rem;
 	aspect-ratio: 1;
 	border-radius: 50%;
 
@@ -124,6 +129,8 @@
 }
 
 .tags {
+	grid-area: tags;
+
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
@@ -131,20 +138,56 @@
 
 .tags__button {
 	height: 2rem;
-	padding-inline: 0.5rem;
 	border-radius: 0.25rem;
+	padding-inline: 0.5rem;
 
 	background-color: var(--color-neutral-200);
 	color: var(--color-primary-400);
 
-	font-size: var(--font-size-100);
-	font-weight: var(--font-weight-bold);
+	transition: color 100ms ease-in, background-color 100ms ease-in;
+}
 
-	transition: background-color 100ms ease-in, color 100ms ease-in;
+.card__heading:hover,
+.card__heading:focus {
+	color: var(--color-primary-400);
 }
 
 .tags__button:hover,
 .tags__button:focus {
-	color: var(--color-neutral-100);
+	color: var(--color-neutral-200);
 	background-color: var(--color-primary-400);
+}
+
+@media screen and (min-width: 50rem) {
+	.card {
+		padding-block: 2rem;
+		padding-inline: 2.5rem;
+		grid-template-columns: 5.5rem 1fr 1.5fr;
+		grid-template-areas: "logo info tags";
+	}
+
+	.card__logo {
+		position: static;
+		width: 100%;
+		transform: none;
+	}
+
+	.card__info {
+		padding: 0px;
+		border: none;
+	}
+
+	.card__company,
+	.card__cathegory,
+	.card__detail {
+		font-size: var(--font-size-400);
+	}
+
+	.card__heading {
+		font-size: var(--font-size-600);
+	}
+
+	.tags {
+		justify-content: end;
+	}
 }

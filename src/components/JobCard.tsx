@@ -5,23 +5,23 @@ import "./JobCard.css"
 export const JobCard = () => {
 	return (
 		<li className="card card--new">
+			<img src={Logo} alt="" className="card__logo" />
+
 			<div className="card__info">
-				<img src={Logo} alt="" className="card__logo" />
-
 				<div className="card__header">
-					<h2 className="card__company">Photosnap</h2>
+					<p className="card__company">Photosnap</p>
 
-					<div className="card__categories">
-						<p className="card__category card__category--new">
+					<div className="card__cathegories">
+						<p className="card__cathegory card__cathegory--new">
 							New!
 						</p>
-						<p className="card__category card__category--featured">
+						<p className="card__cathegory card__cathegory--featured">
 							Featured
 						</p>
 					</div>
 				</div>
 
-				<p className="card__heading">Senior Frontend Developer</p>
+				<h2 className="card__heading">Senior Frontend Developer</h2>
 
 				<div className="card__details">
 					<p className="card__detail">1d ago</p>
