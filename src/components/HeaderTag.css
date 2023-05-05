@@ -7,8 +7,13 @@
 	background-color: var(--color-neutral-200);
 }
 
-.header-tag__tag {
+.header-tag__name {
 	padding-inline: 0.5rem;
+
+	color: var(--color-primary-400);
+
+	font-size: var(--font-size-400);
+	font-weight: var(--font-weight-bold);
 }
 
 .header-tag__button {
