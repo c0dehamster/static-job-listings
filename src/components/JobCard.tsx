@@ -4,7 +4,7 @@ import "./JobCard.css"
 
 export const JobCard = () => {
 	return (
-		<li className="card">
+		<li className="card card--new">
 			<div className="card__info">
 				<img src={Logo} alt="" className="card__logo" />
 
