@@ -11,7 +11,7 @@ export const Header = () => {
 				<HeaderTag></HeaderTag>
 			</ul>
 
-			<button className="button">Clear</button>
+			<button className="header__button">Clear</button>
 		</header>
 	)
 }

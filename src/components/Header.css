@@ -17,14 +17,14 @@
 	gap: 1rem;
 }
 
-.button {
+.header__button {
 	color: var(--color-neutral-400);
 	background-color: transparent;
 
 	transition: color 100ms ease-in;
 }
 
-.button::before {
+.header__button::before {
 	content: "";
 	position: absolute;
 	left: 50%;
@@ -36,13 +36,13 @@
 	transition: 100ms linear;
 }
 
-.button:hover,
-.button:focus {
+.header__button:hover,
+.header__button:focus {
 	color: var(--color-primary-400);
 }
 
-.button:focus::before,
-.button:hover::before {
+.header__button:focus::before,
+.header__button:hover::before {
 	left: 0;
 	right: 0;
 }

@@ -1,4 +1,97 @@
 .card {
-	/* Temporary */
-	border: 1px solid magenta;
+	position: relative;
+
+	min-height: 9.5rem;
+	padding: 1.5rem;
+	border-radius: 0.25rem;
+	align-items: center;
+
+	display: grid;
+	grid-template-areas:
+		"info"
+		"tags";
+	gap: 1rem;
+}
+
+.card__logo {
+	position: absolute;
+	top: 0;
+	left: 1.5rem;
+	transform: translateY(-50%);
+
+	width: 3rem;
+	aspect-ratio: 1;
+}
+
+.card__info {
+	padding-block: 2rem 1rem;
+	display: grid;
+	border-bottom: 1px solid var(--color-neutral-400);
+}
+
+.card__company,
+.card__heading,
+.card__detail {
+	font-size: var(--font-size-100);
+}
+
+.card__company {
+	color: var(--color-primary-400);
+	font-weight: var(--font-weight-bold);
+}
+
+.card__heading {
+	color: var(--color-neutral-900);
+	font-weight: var(--font-weight-bold);
+}
+
+.card__details {
+	display: flex;
+	gap: 1.5rem;
+}
+
+.card__detail {
+	position: relative;
+	color: var(--color-neutral-400);
+	font-weight: var(--font-weight-normal);
+}
+
+.card__detail:not(:last-child)::before {
+	content: "";
+	position: absolute;
+	right: -0.75rem;
+	top: 40%;
+	transform: translateX(50%) translateY(-50%);
+
+	width: 0.2rem;
+	aspect-ratio: 1;
+	border-radius: 50%;
+
+	background-color: var(--color-neutral-400);
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.tags__button {
+	height: 2rem;
+	padding-inline: 0.5rem;
+	border-radius: 0.25rem;
+
+	background-color: var(--color-neutral-200);
+	color: var(--color-primary-400);
+
+	font-size: var(--font-size-100);
+	font-weight: var(--font-weight-bold);
+
+	transition: background-color 100ms ease-in, color 100ms ease-in;
+}
+
+.tags__button:hover,
+.tags__button:focus {
+	color: var(--color-neutral-100);
+	background-color: var(--color-primary-400);
 }

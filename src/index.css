@@ -113,7 +113,4 @@ button {
 	overflow: hidden;
 
 	border: none;
-
-	font-size: var(--font-size-400);
-	font-weight: var(--font-weight-bold);
 }
