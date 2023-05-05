@@ -13,6 +13,7 @@
 	gap: 1rem;
 
 	background-color: white;
+	box-shadow: 0 0.5rem 2rem 0 hsl(180 8% 52% / 0.5);
 }
 
 .card--new::before {
@@ -40,6 +41,7 @@
 .card__info {
 	padding-block: 2rem 1rem;
 	display: grid;
+	gap: 0.5rem;
 	border-bottom: 1px solid var(--color-neutral-400);
 }
 
@@ -47,6 +49,43 @@
 .card__heading,
 .card__detail {
 	font-size: var(--font-size-100);
+}
+
+.card__header,
+.card__categories {
+	display: flex;
+	align-items: center;
+}
+
+.card__header {
+	gap: 1.5rem;
+}
+
+.card__categories {
+	gap: 0.5rem;
+}
+
+.card__category {
+	height: 1.5rem;
+	border-radius: 0.75rem;
+	padding-inline: 0.5rem;
+
+	display: inline-flex;
+	align-items: center;
+
+	color: var(--color-neutral-100);
+
+	font-size: var(--font-size-100);
+	text-transform: uppercase;
+	font-weight: var(--font-weight-bold);
+}
+
+.card__category--new {
+	background-color: var(--color-primary-400);
+}
+
+.card__category--featured {
+	background-color: var(--color-neutral-900);
 }
 
 .card__company {

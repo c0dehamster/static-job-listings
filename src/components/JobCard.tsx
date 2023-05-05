@@ -10,6 +10,15 @@ export const JobCard = () => {
 
 				<div className="card__header">
 					<h2 className="card__company">Photosnap</h2>
+
+					<div className="card__categories">
+						<p className="card__category card__category--new">
+							New!
+						</p>
+						<p className="card__category card__category--featured">
+							Featured
+						</p>
+					</div>
 				</div>
 
 				<p className="card__heading">Senior Frontend Developer</p>
