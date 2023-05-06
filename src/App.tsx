@@ -1,5 +1,7 @@
 import "./App.css"
 
+import data from "./assets/data.json"
+
 import { JobCard } from "./components/JobCard"
 import { Header } from "./components/Header"
 
