@@ -20,7 +20,7 @@
 	height: 9.75rem;
 
 	background-color: var(--color-primary-400);
-	background-image: url(./assets/images/bg-header-mobile.svg);
+	background-image: url(../public/images/bg-header-mobile.svg);
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -49,6 +49,6 @@
 	}
 
 	.app::before {
-		background-image: url(./assets/images/bg-header-desktop.svg);
+		background-image: url(../public/images/bg-header-desktop.svg);
 	}
 }
