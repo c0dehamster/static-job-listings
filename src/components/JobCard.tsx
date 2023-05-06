@@ -1,12 +1,10 @@
-import logo from "../assets/images/photosnap.svg"
-
 import "./JobCard.css"
 
-export const JobCard = (props: {
+interface Job {
 	id: number
 	company: string
 	logo: string
-	new: boolean
+	isNew: boolean
 	featured: boolean
 	position: string
 	role: string
@@ -16,29 +14,62 @@ export const JobCard = (props: {
 	location: string
 	languages: Array<string>
 	tools: Array<string>
+}
+
+export const JobCard = (props: {
+	job: Job
+	handleSelectTag: (filter: string) => void
 }) => {
-	const languagesList = props.languages.map(item => (
+	const {
+		id,
+		company,
+		logo,
+		isNew,
+		featured,
+		position,
+		role,
+		level,
+		postedAt,
+		contract,
+		location,
+		languages,
+		tools,
+	} = props.job
+
+	/* "new" property was changet to "isNew" to prevent the name collision */
+
+	const handleSelectTag = props.handleSelectTag
+
+	const languagesList = languages.map(item => (
 		<li className="tags__item" key={item}>
-			<button className="tags__button">{item}</button>
+			<button
+				className="tags__button"
+				onClick={() => handleSelectTag(item)}>
+				{item}
+			</button>
 		</li>
 	))
 
-	const toolsList = props.tools.map(item => (
+	const toolsList = tools.map(item => (
 		<li className="tags__item" key={item}>
-			<button className="tags__button">{item}</button>
+			<button
+				className="tags__button"
+				onClick={() => handleSelectTag(item)}>
+				{item}
+			</button>
 		</li>
 	))
 
 	return (
 		<div className="card card--new">
-			<img src={props.logo} alt="" className="card__logo" />
+			<img src={logo} alt="" className="card__logo" />
 
 			<div className="card__info">
 				<div className="card__header">
-					<p className="card__company">{props.company}</p>
+					<p className="card__company">{company}</p>
 
 					<div className="card__cathegories">
-						{props.new ? (
+						{isNew ? (
 							<p className="card__cathegory card__cathegory--new">
 								New!
 							</p>
@@ -46,7 +77,7 @@ export const JobCard = (props: {
 							""
 						)}
 
-						{props.featured ? (
+						{featured ? (
 							<p className="card__cathegory card__cathegory--featured">
 								Featured
 							</p>
@@ -56,22 +87,30 @@ export const JobCard = (props: {
 					</div>
 				</div>
 
-				<h2 className="card__heading">Senior Frontend Developer</h2>
+				<h2 className="card__heading">{position}</h2>
 
 				<div className="card__details">
-					<p className="card__detail">{props.postedAt}</p>
-					<p className="card__detail">{props.contract}</p>
-					<p className="card__detail">{props.location}</p>
+					<p className="card__detail">{postedAt}</p>
+					<p className="card__detail">{contract}</p>
+					<p className="card__detail">{location}</p>
 				</div>
 			</div>
 
 			<ul className="tags">
 				<li className="tags__item">
-					<button className="tags__button">{props.role}</button>
+					<button
+						className="tags__button"
+						onClick={() => handleSelectTag(role)}>
+						{role}
+					</button>
 				</li>
 
 				<li className="tags__item">
-					<button className="tags__button">{props.level}</button>
+					<button
+						className="tags__button"
+						onClick={() => handleSelectTag(level)}>
+						{level}
+					</button>
 				</li>
 
 				{languagesList}
