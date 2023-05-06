@@ -12,8 +12,11 @@ function App() {
 
 			<main className="main">
 				<ul className="jobs-list">
-					<JobCard></JobCard>
-					<JobCard></JobCard>
+					{data.map(item => (
+						<li key={item.id}>
+							<JobCard {...item}></JobCard>
+						</li>
+					))}
 				</ul>
 			</main>
 		</div>

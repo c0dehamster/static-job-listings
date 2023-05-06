@@ -1,56 +1,82 @@
-import Logo from "../assets/images/photosnap.svg"
+import logo from "../assets/images/photosnap.svg"
 
 import "./JobCard.css"
 
-export const JobCard = () => {
+export const JobCard = (props: {
+	id: number
+	company: string
+	logo: string
+	new: boolean
+	featured: boolean
+	position: string
+	role: string
+	level: string
+	postedAt: string
+	contract: string
+	location: string
+	languages: Array<string>
+	tools: Array<string>
+}) => {
+	const languagesList = props.languages.map(item => (
+		<li className="tags__item" key={item}>
+			<button className="tags__button">{item}</button>
+		</li>
+	))
+
+	const toolsList = props.tools.map(item => (
+		<li className="tags__item" key={item}>
+			<button className="tags__button">{item}</button>
+		</li>
+	))
+
 	return (
-		<li className="card card--new">
-			<img src={Logo} alt="" className="card__logo" />
+		<div className="card card--new">
+			<img src={props.logo} alt="" className="card__logo" />
 
 			<div className="card__info">
 				<div className="card__header">
-					<p className="card__company">Photosnap</p>
+					<p className="card__company">{props.company}</p>
 
 					<div className="card__cathegories">
-						<p className="card__cathegory card__cathegory--new">
-							New!
-						</p>
-						<p className="card__cathegory card__cathegory--featured">
-							Featured
-						</p>
+						{props.new ? (
+							<p className="card__cathegory card__cathegory--new">
+								New!
+							</p>
+						) : (
+							""
+						)}
+
+						{props.featured ? (
+							<p className="card__cathegory card__cathegory--featured">
+								Featured
+							</p>
+						) : (
+							""
+						)}
 					</div>
 				</div>
 
 				<h2 className="card__heading">Senior Frontend Developer</h2>
 
 				<div className="card__details">
-					<p className="card__detail">1d ago</p>
-					<p className="card__detail">Full Time</p>
-					<p className="card__detail">USA only</p>
+					<p className="card__detail">{props.postedAt}</p>
+					<p className="card__detail">{props.contract}</p>
+					<p className="card__detail">{props.location}</p>
 				</div>
 			</div>
 
 			<ul className="tags">
 				<li className="tags__item">
-					<button className="tags__button">Frontend</button>
+					<button className="tags__button">{props.role}</button>
 				</li>
 
 				<li className="tags__item">
-					<button className="tags__button">Senior</button>
+					<button className="tags__button">{props.level}</button>
 				</li>
 
-				<li className="tags__item">
-					<button className="tags__button">HTML</button>
-				</li>
-
-				<li className="tags__item">
-					<button className="tags__button">CSS</button>
-				</li>
-
-				<li className="tags__item">
-					<button className="tags__button">JavaScript</button>
-				</li>
+				{languagesList}
+				{toolsList}
 			</ul>
-		</li>
+		</div>
 	)
 }
