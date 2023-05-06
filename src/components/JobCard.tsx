@@ -39,6 +39,7 @@ export const JobCard = (props: {
 	/* "new" property was changet to "isNew" to prevent the name collision */
 
 	const handleSelectTag = props.handleSelectTag
+	const cardClass = `card ${isNew ? "card--new" : ""}`
 
 	const languagesList = languages.map(item => (
 		<li className="tags__item" key={item}>
@@ -61,7 +62,7 @@ export const JobCard = (props: {
 	))
 
 	return (
-		<div className="card card--new">
+		<div className={cardClass}>
 			<img src={logo} alt="" className="card__logo" />
 
 			<div className="card__info">
