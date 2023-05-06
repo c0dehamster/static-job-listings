@@ -2,13 +2,13 @@ import "./Header.css"
 
 import { HeaderTag } from "./HeaderTag"
 
-export const Header = () => {
+export const Header = ({ tags }: { tags: Array<string> }) => {
 	return (
 		<header className="header">
 			<ul className="header__tag-list">
-				<HeaderTag></HeaderTag>
-				<HeaderTag></HeaderTag>
-				<HeaderTag></HeaderTag>
+				{tags.map(tagName => (
+					<HeaderTag {...{ tagName }} key={tagName}></HeaderTag>
+				))}
 			</ul>
 
 			<button className="header__button">Clear</button>
