@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import "./App.css"
 
 import data from "./assets/data.json"
@@ -6,17 +8,37 @@ import { JobCard } from "./components/JobCard"
 import { Header } from "./components/Header"
 
 function App() {
-	const handleSelectTag = (id: string) => console.log(id)
-	const tags: Set<string> = new Set([])
+	const [tags, setTags] = useState<Set<string>>(new Set([]))
+	const [jobs, setJobs] = useState(data)
 
-	const dataFiltered = data.filter(job => {
-		const jobTags = [job.role, job.level, ...job.languages, ...job.tools]
-		const included = jobTags.filter(tag => tags.has(tag)).length > 0
+	const handleSelectTag = (id: string) => setTags(() => tags.add(id))
+	const handleRemoveTag = (id: string) =>
+		setTags(() => {
+			tags.delete(id)
+			return tags
+		})
 
-		if (included) return job
-	})
+	const filterJobs = () => {
+		if (tags.size === 0) {
+			setJobs(data)
+			return
+		}
 
-	const jobs = tags.size === 0 ? data : dataFiltered
+		const dataFiltered = data.filter(job => {
+			const jobTags = [
+				job.role,
+				job.level,
+				...job.languages,
+				...job.tools,
+			]
+
+			const included = jobTags.filter(tag => tags.has(tag)).length > 0
+
+			if (included) return job
+		})
+
+		setJobs(dataFiltered)
+	}
 
 	const header =
 		tags.size !== 0 ? <Header {...{ tags: Array.from(tags) }}></Header> : ""
