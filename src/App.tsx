@@ -40,12 +40,13 @@ function App() {
 		setJobs(dataFiltered)
 	}
 
-	const header =
-		tags.size !== 0 ? <Header {...{ tags: Array.from(tags) }}></Header> : ""
-
 	return (
 		<div className="app">
-			{header}
+			{tags.size !== 0 ? (
+				<Header {...{ tags: Array.from(tags) }}></Header>
+			) : (
+				""
+			)}
 
 			<main className="main">
 				<ul className="jobs-list">
