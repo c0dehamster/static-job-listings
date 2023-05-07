@@ -2,12 +2,20 @@ import "./Header.css"
 
 import { HeaderTag } from "./HeaderTag"
 
-export const Header = ({ tags }: { tags: Array<string> }) => {
+export const Header = ({
+	tags,
+	handleRemoveTag,
+}: {
+	tags: Array<string>
+	handleRemoveTag: (id: string) => void
+}) => {
 	return (
 		<header className="header">
 			<ul className="header__tag-list">
 				{tags.map(tagName => (
-					<HeaderTag {...{ tagName }} key={tagName}></HeaderTag>
+					<HeaderTag
+						{...{ tagName, handleRemoveTag }}
+						key={tagName}></HeaderTag>
 				))}
 			</ul>
 

@@ -8,18 +8,25 @@ import { JobCard } from "./components/JobCard"
 import { Header } from "./components/Header"
 
 function App() {
-	const [tags, setTags] = useState<Set<string>>(new Set([]))
+	// Tried to use set for tags but couldn't make it work
+	const [tags, setTags] = useState<Array<string>>([])
 	const [jobs, setJobs] = useState(data)
 
-	const handleSelectTag = (id: string) => setTags(() => tags.add(id))
-	const handleRemoveTag = (id: string) =>
+	const handleSelectTag = (id: string) => {
 		setTags(() => {
-			tags.delete(id)
+			if (!tags.includes(id)) {
+				return [...tags, id]
+			}
+
 			return tags
 		})
+	}
+
+	const handleRemoveTag = (id: string) =>
+		setTags(() => tags.filter(item => item !== id))
 
 	const filterJobs = () => {
-		if (tags.size === 0) {
+		if (tags.length === 0) {
 			setJobs(data)
 			return
 		}
@@ -32,7 +39,8 @@ function App() {
 				...job.tools,
 			]
 
-			const included = jobTags.filter(tag => tags.has(tag)).length > 0
+			const included =
+				jobTags.filter(tag => tags.includes(tag)).length > 0
 
 			if (included) return job
 		})
@@ -42,8 +50,9 @@ function App() {
 
 	return (
 		<div className="app">
-			{tags.size !== 0 ? (
-				<Header {...{ tags: Array.from(tags) }}></Header>
+			{tags.length !== 0 ? (
+				<Header
+					{...{ tags: Array.from(tags), handleRemoveTag }}></Header>
 			) : (
 				""
 			)}
@@ -51,10 +60,9 @@ function App() {
 			<main className="main">
 				<ul className="jobs-list">
 					{jobs.map(item => (
-						<li key={item.id}>
-							<JobCard
-								{...{ job: item, handleSelectTag }}></JobCard>
-						</li>
+						<JobCard
+							{...{ job: item, handleSelectTag }}
+							key={item.id}></JobCard>
 					))}
 				</ul>
 			</main>
