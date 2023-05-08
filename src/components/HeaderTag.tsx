@@ -1,4 +1,4 @@
-import iconRemove from "../../public/images/icon-remove.svg"
+import iconRemove from "../assets/images/icon-remove.svg"
 import "./HeaderTag.css"
 
 export const HeaderTag = ({
