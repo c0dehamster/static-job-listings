@@ -1,20 +1,5 @@
 import "./JobCard.css"
-
-interface Job {
-	id: number
-	company: string
-	logo: string
-	isNew: boolean
-	featured: boolean
-	position: string
-	role: string
-	level: string
-	postedAt: string
-	contract: string
-	location: string
-	languages: Array<string>
-	tools: Array<string>
-}
+import { Job } from "../models"
 
 export const JobCard = (props: {
 	job: Job
