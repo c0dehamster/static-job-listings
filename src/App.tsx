@@ -56,7 +56,6 @@ function App() {
 	return (
 		<div className="app">
 			<Header {...{ tags, handleRemoveTag, handleClear }}></Header>
-
 			<JobsList {...{ jobs, handleSelectTag }}></JobsList>
 		</div>
 	)

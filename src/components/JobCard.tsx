@@ -6,7 +6,6 @@ export const JobCard = (props: {
 	handleSelectTag: (filter: string) => void
 }) => {
 	const {
-		id,
 		company,
 		logo,
 		isNew,

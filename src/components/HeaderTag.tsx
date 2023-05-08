@@ -15,6 +15,7 @@ export const HeaderTag = ({
 			<button
 				className="header-tag__button"
 				onClick={() => handleRemoveTag(tagName)}>
+				<span className="sr-only">Remove</span>
 				<img src={iconRemove} alt="" className="button__icon" />
 			</button>
 		</li>
