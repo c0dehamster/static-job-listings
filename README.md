@@ -48,7 +48,7 @@ Users should be able to:
 
 I used this challenge to finally try using React since knowing React seems to be a requirement for a web developer. This decision made this project more difficult for me than it could have been.
 
-The biggest thing I missed in React compared to Svelte (apart from built-in observables, style scoping, overall less boilerplate, and easy-to-read, informative error messages) was reactive assignments. On the positive side, every time I struggled to make something work I could easily look it up in others' solutions. React docs are also very detailed and easy to understand.
+I had to learn a lot of new concepts such as how to manage state without reactive assignments and built-in observables, how to import assets in a react project, how to make use of unfamiliar error messages from Webpack. On the positive side, every time I struggled to make something work I could easily look it up in others' solutions. React docs are also very detailed and easy to understand.
 
 I tried to create react app with NextJS but scrapped that idea as I wasn't going to use any Next-specific functions anyway. Instead, I used Vite, and it worked fine for me.
 
