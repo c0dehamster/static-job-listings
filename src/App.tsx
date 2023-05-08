@@ -25,6 +25,8 @@ function App() {
 	const handleRemoveTag = (id: string) =>
 		setTags(() => tags.filter(item => item !== id))
 
+	const handleClear = () => setTags([])
+
 	const filterJobs = () => {
 		if (tags.length === 0) {
 			setJobs(data)
@@ -47,12 +49,14 @@ function App() {
 		setJobs(dataFiltered)
 	}
 
+	// There must be a way to avoid useEffect
+
 	useEffect(filterJobs, [tags])
 
 	return (
 		<div className="app">
 			{tags.length !== 0 ? (
-				<Header {...{ tags, handleRemoveTag }}></Header>
+				<Header {...{ tags, handleRemoveTag, handleClear }}></Header>
 			) : (
 				""
 			)}

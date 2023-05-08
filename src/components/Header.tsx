@@ -5,9 +5,11 @@ import { HeaderTag } from "./HeaderTag"
 export const Header = ({
 	tags,
 	handleRemoveTag,
+	handleClear,
 }: {
 	tags: Array<string>
 	handleRemoveTag: (id: string) => void
+	handleClear: () => void
 }) => {
 	return (
 		<header className="header">
@@ -19,7 +21,9 @@ export const Header = ({
 				))}
 			</ul>
 
-			<button className="header__button">Clear</button>
+			<button className="header__button" onClick={handleClear}>
+				Clear
+			</button>
 		</header>
 	)
 }
