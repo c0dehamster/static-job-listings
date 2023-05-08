@@ -85,13 +85,16 @@ select {
 	--color-neutral-400: hsl(180, 8%, 52%);
 	--color-neutral-900: hsl(180, 14%, 20%);
 
+	--color-shadow: hsl(180 8% 52% / 0.25);
+
 	--font-weight-normal: 500;
 	--font-weight-bold: 700;
 
 	--font-size-100: 0.81rem;
 	--font-size-200: 0.875rem;
 	--font-size-400: 0.94rem;
-	--font-size-600: 1.19rem;
+	--font-size-500: 1rem;
+	--font-size-600: 1.25rem;
 }
 
 body {

@@ -1,4 +1,6 @@
 .app {
+	min-height: 62.5rem;
+
 	position: relative;
 
 	padding-block: 7.5rem 2rem;
@@ -40,6 +42,7 @@
 	.app {
 		padding-block-end: 7.5rem;
 		padding-inline: 0px;
+		gap: 2.5rem;
 	}
 
 	/* Magic numbers provide seamless transition between
@@ -51,5 +54,9 @@
 
 	.app::before {
 		background-image: url(../public/images/bg-header-desktop.svg);
+	}
+
+	.jobs-list {
+		gap: 1.5rem;
 	}
 }
