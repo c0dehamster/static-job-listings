@@ -12,7 +12,6 @@ This is a solution to the [Job listings with filtering challenge on Frontend Men
     -   [Built with](#built-with)
     -   [What I learned](#what-i-learned)
     -   [Continued development](#continued-development)
-    -   [Useful resources](#useful-resources)
 -   [Author](#author)
 
 ## Overview
@@ -31,8 +30,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://your-solution-url.com)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   [Solution URL](https://github.com/c0dehamster/static-job-listings)
+-   [Live Site URL](https://static-job-listings-omega-eight.vercel.app/)
 
 ## My process
 
@@ -56,11 +55,6 @@ I tried to create react app with NextJS but scrapped that idea as I wasn't going
 ### Continued development
 
 I am pretty sure that if I am ever going to work on an actual project, it will be built with React.
-
-### Useful resources
-
--   [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
--   [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
