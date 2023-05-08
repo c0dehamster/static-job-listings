@@ -19,7 +19,7 @@
 	box-shadow: 0 0.5rem 2rem 0 hsl(180 8% 52% / 0.5);
 }
 
-.card--new::before {
+.card--featured::before {
 	content: "";
 	position: absolute;
 	top: 0;

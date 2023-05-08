@@ -24,7 +24,7 @@ export const JobCard = (props: {
 	/* "new" property was changet to "isNew" to prevent the name collision */
 
 	const handleSelectTag = props.handleSelectTag
-	const cardClass = `card ${isNew ? "card--new" : ""}`
+	const cardClass = `card ${featured ? "card--featured" : ""}`
 
 	const languagesList = languages.map(item => (
 		<li className="tags__item" key={item}>

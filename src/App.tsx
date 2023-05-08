@@ -55,11 +55,7 @@ function App() {
 
 	return (
 		<div className="app">
-			{tags.length !== 0 ? (
-				<Header {...{ tags, handleRemoveTag, handleClear }}></Header>
-			) : (
-				""
-			)}
+			<Header {...{ tags, handleRemoveTag, handleClear }}></Header>
 
 			<JobsList {...{ jobs, handleSelectTag }}></JobsList>
 		</div>

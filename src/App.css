@@ -1,7 +1,7 @@
 .app {
 	position: relative;
 
-	padding-block-start: 7.5rem;
+	padding-block: 7.5rem 2rem;
 	padding-inline: 1.5rem;
 
 	display: flex;
@@ -38,6 +38,7 @@
 
 @media screen and (min-width: 50rem) {
 	.app {
+		padding-block-end: 7.5rem;
 		padding-inline: 0px;
 	}
 
