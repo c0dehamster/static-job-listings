@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import "./App.css"
 
@@ -46,6 +46,8 @@ function App() {
 
 		setJobs(dataFiltered)
 	}
+
+	useEffect(filterJobs, [tags])
 
 	return (
 		<div className="app">

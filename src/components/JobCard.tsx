@@ -47,7 +47,7 @@ export const JobCard = (props: {
 	))
 
 	return (
-		<div className={cardClass}>
+		<li className={cardClass}>
 			<img src={logo} alt="" className="card__logo" />
 
 			<div className="card__info">
@@ -102,6 +102,6 @@ export const JobCard = (props: {
 				{languagesList}
 				{toolsList}
 			</ul>
-		</div>
+		</li>
 	)
 }
