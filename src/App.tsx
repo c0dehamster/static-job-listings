@@ -41,9 +41,9 @@ function App() {
 				...job.tools,
 			]
 
-			const includedTags = jobTags.filter(tag => tags.includes(tag))
+			const included = tags.every(tag => jobTags.includes(tag))
 
-			if (includedTags.length >= tags.length) return job
+			if (included) return job
 		})
 
 		setJobs(dataFiltered)
