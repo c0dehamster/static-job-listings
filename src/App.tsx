@@ -4,7 +4,7 @@ import "./App.css"
 
 import data from "./assets/data.json"
 
-import { JobCard } from "./components/JobCard"
+import { JobsList } from "./components/JobsList"
 import { Header } from "./components/Header"
 
 function App() {
@@ -14,11 +14,11 @@ function App() {
 
 	const handleSelectTag = (id: string) => {
 		setTags(() => {
-			if (!tags.includes(id)) {
-				return [...tags, id]
+			if (tags.includes(id)) {
+				return tags
 			}
 
-			return tags
+			return [...tags, id]
 		})
 	}
 
@@ -39,10 +39,9 @@ function App() {
 				...job.tools,
 			]
 
-			const included =
-				jobTags.filter(tag => tags.includes(tag)).length > 0
+			const includedTags = jobTags.filter(tag => tags.includes(tag))
 
-			if (included) return job
+			if (includedTags.length > 0) return job
 		})
 
 		setJobs(dataFiltered)
@@ -51,21 +50,12 @@ function App() {
 	return (
 		<div className="app">
 			{tags.length !== 0 ? (
-				<Header
-					{...{ tags: Array.from(tags), handleRemoveTag }}></Header>
+				<Header {...{ tags, handleRemoveTag }}></Header>
 			) : (
 				""
 			)}
 
-			<main className="main">
-				<ul className="jobs-list">
-					{jobs.map(item => (
-						<JobCard
-							{...{ job: item, handleSelectTag }}
-							key={item.id}></JobCard>
-					))}
-				</ul>
-			</main>
+			<JobsList {...{ jobs, handleSelectTag }}></JobsList>
 		</div>
 	)
 }
